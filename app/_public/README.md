@@ -25,4 +25,4 @@ Start Tailwindcss is based on the [Tailwindcss](https://tailwindcss.com/).
 
 ## Copyright and License
 
-Copyright 2024 Rhythm Italiya. Code released under the [MIT](https://github.com/RhythmItaliya/sms-otp) license.
+Copyright 2024 Rhythm Italiya. Code released under the [MIT](https://github.com/RhythmItaliya/sms-otp/blob/main/app/_public/LICENSE) license.

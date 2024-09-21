@@ -30,7 +30,7 @@ _Open terminal, type **npm run test-watch**, there are in total **14 test cases*
   * ![Screenshot](screenshots/ui5.png)
   * ![Screenshot](screenshots/ui6.png)
 
-* _**Test Cases**_
+* _**Output**_
   * ![Screenshot](screenshots/test.png)
  
 ### Credits 
