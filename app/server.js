@@ -23,6 +23,10 @@ app.set('views', path.join(__dirname + '/views'));
 const mongoose      = require('./db');
 const publicRoutes  = require('./routes/public')(app);
 
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
 app.listen(port, () => {
     console.log('app started and listening to port ', port);
 })
