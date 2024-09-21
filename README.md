@@ -12,7 +12,6 @@ _Open terminal, type **npm run test-watch**, there are in total **14 test cases*
 
 ### Libraries Usesd
 * I have used the **_Twilio API_** to send the OTP messages.
-  * The API credentials are saved in a JSON file inside _**app/configs/credentials.json**_ 
 
 ### Tools and Libraries Used 
 * I used the following 

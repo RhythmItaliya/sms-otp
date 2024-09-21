@@ -1,27 +1,28 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Shop Item](http://startbootstrap.com/template-overviews/shop-item/)
+# [Start Tailwindcss](https://tailwindcss.com/) - [Shop Item](https://tailwindui.com/components?ref=sidebar)
 
-[Shop Item](http://startbootstrap.com/template-overviews/shop-item/) is a basic HTML store item template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+[Shop Item](https://tailwindui.com/components?ref=sidebar) is a basic HTML store item template for [Tailwindcss](https://tailwindcss.com/) created by [Start Tailwindcss](https://tailwindcss.com/).
 
 ## Getting Started
 
 To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/shop-item/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-shop-item.git`
+* [Download the latest release on Start Tailwindcss](https://tailwindui.com/components?ref=sidebar)
+* Clone the repo: `git clone https://github.com/RhythmItaliya/sms-otp`
 * Fork the repo
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-shop-item/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/shop-item/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/RhythmItaliya/sms-otp) here on GitHub or leave a comment on the [template overview page at Start Tailwindcss](http://startbootstrap.com/template-overviews/shop-item/).
 
 ## Creator
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+Start Tailwindcss was created by and is maintained by **[Rhythm Italiya](https://rhythmitaliya.com/)**.
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+* https://x.com/rhythmitaliya
+* https://github.com/rhythmitaliya
+* https://www.linkedin.com/in/rhythmitaliya
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Start Tailwindcss is based on the [Tailwindcss](https://tailwindcss.com/).
 
 ## Copyright and License
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-shop-item/blob/gh-pages/LICENSE) license.
+Copyright 2024 Rhythm Italiya. Code released under the [MIT](https://github.com/RhythmItaliya/sms-otp) license.
