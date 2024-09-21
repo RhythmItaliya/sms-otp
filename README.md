@@ -1,5 +1,5 @@
 # Send OTP to your contacts
-* This is a simple web application to send OTP to your saved contacts. 
+* This is a simple Web app that can send an OTP (via SMS) to a list of contacts, one at a time. 
 * This has 2 menus 'Home' - The main page and 'Sent Messages' - Where you can view all the sent messages.
 
 ### How to Setup?
@@ -22,17 +22,16 @@ _Open terminal, type **npm run test-watch**, there are in total **14 test cases*
 
 ### Screenshot
 * _**Application UI**_
-  * ![Screenshot](screenshots/ui1.JPG)
-  * ![Screenshot](screenshots/ui2.JPG)
-  * ![Screenshot](screenshots/ui3.JPG)
-  * ![Screenshot](screenshots/ui4.JPG)
-  * ![Screenshot](screenshots/ui5.JPG)
-  * ![Screenshot](screenshots/ui5a.JPG)
-  * ![Screenshot](screenshots/ui6.JPG)
-  * ![Screenshot](screenshots/ui7.JPG)
+  * ![Screenshot](screenshots/ui1.png)
+  * ![Screenshot](screenshots/ui2.png)
+  * ![Screenshot](screenshots/ui3.png)
+  * ![Screenshot](screenshots/ui4.png)
+  * ![Screenshot](screenshots/ui5.png)
+  * ![Screenshot](screenshots/ui5a.png)
+  * ![Screenshot](screenshots/ui6.png)
 
 * _**Test Cases**_
-  * ![Screenshot](screenshots/test.JPG)
+  * ![Screenshot](screenshots/test.png)
  
 ### Credits 
 * _Icons are taken from : **Flaticon** and are Made by **Freepik**, Licensed under **CC 3.0**_
