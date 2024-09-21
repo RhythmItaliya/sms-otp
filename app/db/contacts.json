@@ -1,0 +1,18 @@
+{
+    "contacts": [
+        {
+            "firstName": "Rutashu",
+            "lastName": "Bhayani",
+            "mobile": "+919723707522",
+            "image": "/icons/m1.png",
+            "address": "101, Green Valley, Mumbai"
+        },
+        {
+            "firstName": "Rhythm",
+            "lastName": "Italiya",
+            "mobile": "+919265748502",
+            "image": "/icons/m1.png",
+            "address": "202, Blue Sky Apartments, Pune"
+        }
+    ]
+}

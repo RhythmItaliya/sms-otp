@@ -1,0 +1,44 @@
+<% include partials/header %>
+
+    <div class="container text-center">
+    <br>
+        <div class="col-md-6 col-md-offset-3">
+        
+        <%  let response = '';
+            let name = data.name;
+            let mobile = data.mobile;
+        %>
+
+        <%    if(data.err) { response = data.err; %>
+            <p class="alert alert-danger" style="font-size:2em;">
+                <b class="text-warning"><%= response %></b>                
+            </p>
+
+        <%  }  else { response = data.success.msg; %>
+        
+            <p class="alert alert-success" style="font-size:2em;">
+                <b class="text-success"><%= response %></b>
+            </p>
+        <% } %>
+
+            <br><br>
+            <a href="/sent" class="btn btn-large btn-primary">Go to Sent Messages</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <% if (data.err) { %>
+                <a class="btn btn-large btn-warning" onclick="window.history.back()">Try Again? </a>
+            <% } else { %>
+                <a href="/contacts/details/<%= mobile %>" class="btn btn-large btn-success">View <%= name %></a>
+            <% } %>            
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <a href="/" class="btn btn-large btn-danger">Go to Home</a>
+        </div>
+        
+    </div>
+
+<% include partials/footer %>

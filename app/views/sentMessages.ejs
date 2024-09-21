@@ -1,0 +1,54 @@
+<% include partials/header %>
+    <div class="container col-md-8 col-md-offset-2 text-center"> 
+    <h2 class="text-primary">All the Sent Messages</h2>
+    <hr>    
+    <br>
+        <% if(data.err) { %>
+            <img src="/icons/404.png" alt="error occoured">
+            <h1 class="alert alert-danger"></h1>
+           <% } else { %>
+            
+                <% if(data.length < 1)  {%>
+                    <p class="alert alert-danger"> No record found ! Why don't you send few messages?</p>
+                <% } else { %>
+                    <table class="table">
+                        <thead>
+                            <th>Name</th>
+                            <th>Mobile Number</th>
+                            <th>OTP</th>
+                            <th>Status</th>
+                            <th style="text-align:center;">Time</th>
+                            <th>Actions</th>                            
+                        </thead>
+                    <tbody>
+                    <% data.forEach((sms) => { %>
+                    <tr>
+                        <td><a href="/contacts/details/<%= sms.to %>" class="">
+                            <%= sms.recepientName %>
+                        </a></td>
+                        <td><%= '+' + sms.to %></td>
+                        <td class="text-danger"><%= sms.otp %></td>
+                        <% 
+                            let status = 'text-danger glyphicon glyphicon-remove';
+                            let style = 'alert alert-danger';
+
+                            if (sms.status === 200) {
+                                status = 'text-success glyphicon glyphicon-ok';
+                                style = 'alert alert-success';
+                            }
+                        %>
+                        <td class="<%= style %>"><span class="<%= status %>"></span></td>
+                        <td><%= new Date(sms._sentAt).toString(); %></td>
+                        <td><a href="/sent/details/<%=sms._id %>" class="btn btn-primary btn-sm">Details</a></td>
+                    </tr> 
+                    <% }); %>
+                <% }%>
+            </tbody>
+            </table>    
+            <br>
+            <br>
+            <br>
+           <% } %>
+    </div>
+
+<% include partials/footer%>

@@ -1,0 +1,41 @@
+{
+  "name": "sms-otp-mean",
+  "version": "1.0.0",
+  "description": "a app to send otp sm to contacts",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "test": "export NODE_ENV=test || set \"NODE_ENV=test\" && mocha --timeout 15000 app/**/*test.js",
+    "test-watch": " nodemon --exec \"npm test\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashokdey/sms-otp-mean.git"
+  },
+  "engines": {
+    "node": "7.3.0"
+  },
+  "author": "Rhythm Italiya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashokdey/sms-otp-mean/issues"
+  },
+  "homepage": "https://github.com/ashokdey/sms-otp-mean#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.22",
+    "mongoose": "^8.6.3",
+    "twilio": "^2.11.1",
+    "validator": "^6.2.1"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  }
+}
