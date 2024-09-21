@@ -13,6 +13,76 @@
             "mobile": "+919265748502",
             "image": "/icons/b1.png",
             "address": "202, Blue Sky Apartments, Pune"
+        },
+        {
+            "firstName": "Jay",
+            "lastName": "Kakadiya",
+            "mobile": "+13132107340",
+            "image": "/icons/b2.png",
+            "address": "303, Maple Street, Bangalore"
+        },
+        {
+            "firstName": "Millie",
+            "lastName": "Borown",
+            "mobile": "+16464214652",
+            "image": "/icons/g1.png",
+            "address": "404, Oak Lane, Chennai"
+        },
+        {
+            "firstName": "Ananya",
+            "lastName": "Chopra",
+            "mobile": "+16464214653",
+            "image": "/icons/b2.png",
+            "address": "505, Palm Grove, Delhi"
+        },
+        {
+            "firstName": "Aditi",
+            "lastName": "Sharma",
+            "mobile": "+919876543210",
+            "image": "/icons/g2.png",
+            "address": "606, River Bank, Ahmedabad"
+        },
+        {
+            "firstName": "Nikhil",
+            "lastName": "Patel",
+            "mobile": "+919654321098",
+            "image": "/icons/b2.png",
+            "address": "707, Hilltop, Jaipur"
+        },
+        {
+            "firstName": "Sneha",
+            "lastName": "Kumar",
+            "mobile": "+918765432109",
+            "image": "/icons/b3.png",
+            "address": "808, Sea View, Mumbai"
+        },
+        {
+            "firstName": "Vikram",
+            "lastName": "Singh",
+            "mobile": "+917654321012",
+            "image": "/icons/b5.png",
+            "address": "909, Sunset Boulevard, Pune"
+        },
+        {
+            "firstName": "Priya",
+            "lastName": "Desai",
+            "mobile": "+919834567890",
+            "image": "/icons/g2.png",
+            "address": "1010, Mountain Peak, Kolkata"
+        },
+        {
+            "firstName": "Kabir",
+            "lastName": "Yadav",
+            "mobile": "+919293847560",
+            "image": "/icons/g1.png",
+            "address": "1111, Desert Rose, Udaipur"
+        },
+        {
+            "firstName": "Anaya",
+            "lastName": "Verma",
+            "mobile": "+918182728272",
+            "image": "/icons/m1.png",
+            "address": "1212, Forest Hill, Nashik"
         }
     ]
 }
