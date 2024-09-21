@@ -13,7 +13,7 @@
     "url": "git+https://github.com/ashokdey/sms-otp-mean.git"
   },
   "engines": {
-    "node": "7.3.0"
+    "node": "20.x"
   },
   "author": "Rhythm Italiya",
   "license": "MIT",
