@@ -1,37 +1,46 @@
 <% include partials/header %>
-    <!-- Page Content -->
+<!-- Page Content -->
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-2">
-    <h2 class="text-danger">Send OTP SMS to Contacts</h2>
-    <h4 class="text-primary">Available Contacts</h4>
-    <hr>    
-    <br>
-    <% if(locals.data) { %>
-        <table class="table">
-            <thead>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Mobile</th>
-                <th>Action</th>
-            </thead>
-            <tbody>
-                <% data.contacts.forEach((contact) => { %>
+<div class="flex items-center justify-center pt-20">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full max-w-4xl">
+        <h2 class="text-2xl font-bold text-center text-gray-800 bg-gray-100 p-4 rounded-lg shadow-lg mb-6">
+        Contacts List
+          </h2>
+
+        <hr>
+        <% if(locals.data) { %>
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <td style="text-align:left"><%= contact.firstName %></td>
-                        <td style="text-align:left"><%= contact.lastName %></td>
-                        <td style="text-align:left"><%= contact.mobile %></td>
-                        <td> <a href=<%= '/contacts/details/' + parseInt(contact.mobile) %> class="btn btn-primary">View Details</a></td>
+                        <th scope="col" class="text-center py-4">Name</th>
+                        <th scope="col" class="text-center py-4">Mobile</th>
+                        <th scope="col" class="text-center py-4">Action</th>
                     </tr>
-                <% }) %>
-            </tbody>
-        </table>
-    <% } else { %>
-        <p class="alert alert-danger"><%= err %></p>
-    <% }%>
+                </thead>
+                <tbody>
+                    <% data.contacts.forEach((contact) => { %>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="flex items-center justify-start px-6 py-4 space-x-4">
+                                <img class="w-12 h-12 rounded-full" src="<%= contact.image %>" alt="<%= contact.firstName %> image">
+                                <div>
+                                    <div class="text-base font-semibold"><%= contact.firstName %></div>
+                                    <div class="font-normal text-gray-500"><%= contact.lastName %></div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-center"><%= contact.mobile %></td>
+                            <td class="px-6 py-4 text-center">
+                                <a href="<%= '/contacts/details/' + parseInt(contact.mobile) %>"
+                                   aria-label="View details for <%= contact.firstName %> <%= contact.lastName %>"
+                                   class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 transition duration-200">View Details</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="alert alert-danger"><%= err %></p>
+        <% } %>
     </div>
-  </div>
 </div>
-    <!-- /.container -->
+<!-- /.container -->
 <% include partials/footer %>

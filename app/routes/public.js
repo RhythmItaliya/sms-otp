@@ -11,7 +11,6 @@ const twilioClient = require('twilio')(process.env.TWILIO_SID, process.env.TWILI
 const { SMS } = require('../models/sms');
 const helpers = require('../helpers');
 
-
 module.exports = (app) => {
     app.get('/', (req, res) => {
         res.status(200).redirect('/contacts');
@@ -167,4 +166,7 @@ module.exports = (app) => {
     app.get('/*', (req, res) => {
         res.redirect('/404');
     });
+    
 };
+
+

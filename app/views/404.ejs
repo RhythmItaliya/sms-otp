@@ -1,16 +1,15 @@
-<% include partials/header%>
-    <div class="container text-center">
-        <di class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <img src="/icons/404.png" alt="" style="height:100px; width:100px;">
-                <br>
-                <h3 class="text-warning"> You are trying to access invalid links !</h3>
-                <hr>
-                <br>
-                <h1>Are you lost?</h1>
-                <br>
-                <a href="/" class="btn btn-lg btn-success">Take me Home !</a>
-            </div>
-        </di>
+<% include partials/header %>
+
+<main class="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-6 py-24 sm:py-32">
+    <div class="text-center">
+        <img src="/icons/404.png" alt="404 Not Found" class="h-24 w-24 mx-auto">
+        <p class="mt-4 text-2xl font-semibold text-indigo-600">404</p>
+        <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Page Not Found</h1>
+        <p class="mt-6 text-base leading-7 text-gray-600">Sorry, we couldn’t find the page you’re looking for.</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="/" class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 transition duration-200">Go back home</a>
+        </div>
     </div>
-<% include partials/footer%>
+</main>
+
+<% include partials/footer %>

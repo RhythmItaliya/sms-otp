@@ -1,54 +1,98 @@
 <% include partials/header %>
-    <div class="container col-md-8 col-md-offset-2 text-center"> 
-    <h2 class="text-primary">All the Sent Messages</h2>
-    <hr>    
-    <br>
-        <% if(data.err) { %>
-            <img src="/icons/404.png" alt="error occoured">
-            <h1 class="alert alert-danger"></h1>
-           <% } else { %>
-            
-                <% if(data.length < 1)  {%>
-                    <p class="alert alert-danger"> No record found ! Why don't you send few messages?</p>
-                <% } else { %>
-                    <table class="table">
-                        <thead>
-                            <th>Name</th>
-                            <th>Mobile Number</th>
-                            <th>OTP</th>
-                            <th>Status</th>
-                            <th style="text-align:center;">Time</th>
-                            <th>Actions</th>                            
+<!-- Page Content -->
+
+<div class="flex items-center justify-center pt-20">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full max-w-4xl">
+        <h2 class="text-2xl font-bold text-center text-gray-800 bg-gray-100 p-4 rounded-lg shadow-lg">
+            All the Sent Messages
+        </h2>
+        <hr class="mb-4">
+        
+        <% if (data.err) { %>
+            <img src="/icons/404.png" alt="error occurred" class="mx-auto">
+            <h1 class="text-danger text-xl text-center mb-4">An error occurred!</h1>
+        <% } else { %>
+            <% if (data.length < 1) { %>
+                <p class="text-danger text-center p-4">No record found! Why don't you send a few messages?</p>
+            <% } else { %>
+                <div class="mb-4 text-center">
+                    <input type="text" id="filterInput" placeholder="Search by Name or Mobile Number" class="border rounded-lg px-3 py-2">
+                    <input type="date" id="dateInput" class="border rounded-lg px-3 py-2 ml-2">
+                </div>
+
+                <div style="height: 500px;" class="overflow-y-auto">
+                    <table id="messagesTable" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th class="py-4 text-center">Name</th>
+                                <th class="py-4 text-center">Mobile Number</th>
+                                <th class="py-4 text-center">OTP</th>
+                                <th class="py-4 text-center">Status</th>
+                                <th class="py-4 text-center">Time</th>
+                                <th class="py-4 text-center">Actions</th>
+                            </tr>
                         </thead>
-                    <tbody>
-                    <% data.forEach((sms) => { %>
-                    <tr>
-                        <td><a href="/contacts/details/<%= sms.to %>" class="">
-                            <%= sms.recepientName %>
-                        </a></td>
-                        <td><%= '+' + sms.to %></td>
-                        <td class="text-danger"><%= sms.otp %></td>
-                        <% 
-                            let status = 'text-danger glyphicon glyphicon-remove';
-                            let style = 'alert alert-danger';
-
-                            if (sms.status === 200) {
-                                status = 'text-success glyphicon glyphicon-ok';
-                                style = 'alert alert-success';
-                            }
-                        %>
-                        <td class="<%= style %>"><span class="<%= status %>"></span></td>
-                        <td><%= new Date(sms._sentAt).toString(); %></td>
-                        <td><a href="/sent/details/<%=sms._id %>" class="btn btn-primary btn-sm">Details</a></td>
-                    </tr> 
-                    <% }); %>
-                <% }%>
-            </tbody>
-            </table>    
-            <br>
-            <br>
-            <br>
-           <% } %>
+                        <tbody>
+                            <% data.forEach((sms) => { %>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td class="py-4 text-center">
+                                        <a href="/contacts/details/<%= sms.to %>" class="text-indigo-600 hover:underline">
+                                            <%= sms.recepientName %>
+                                        </a>
+                                    </td>
+                                    <td class="py-4 text-center"><%= '+' + sms.to %></td>
+                                    <td class="text-danger text-center"><%= sms.otp %></td>
+                                    <td class="text-center">
+                                        <% 
+                                            let statusClass = 'text-danger';
+                                            if (sms.status === 200) {
+                                                statusClass = 'text-success';
+                                            }
+                                        %>
+                                        <span class="<%= statusClass %>">
+                                            <%= sms.status === 200 ? 'Success' : 'Failed' %>
+                                        </span>
+                                    </td>
+                                    <td class="py-4 text-center"><%= new Date(sms._sentAt).toLocaleString() %></td>
+                                    <td class="py-4 text-center">
+                                        <a href="/sent/details/<%= sms._id %>" class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 transition duration-200">Details</a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } %>
+        <% } %>
     </div>
+</div>
 
-<% include partials/footer%>
+<script>
+document.getElementById('filterInput').addEventListener('input', filterMessages);
+document.getElementById('dateInput').addEventListener('change', filterMessages);
+
+function filterMessages() {
+    const nameFilter = document.getElementById('filterInput').value.toLowerCase();
+    const dateFilter = document.getElementById('dateInput').value;
+    const rows = document.querySelectorAll('#messagesTable tbody tr');
+    
+    rows.forEach(row => {
+        const name = row.cells[0].textContent.toLowerCase();
+        const mobileNumber = row.cells[1].textContent.toLowerCase();
+        const timeCell = row.cells[4].textContent;
+        const rowDate = new Date(timeCell).toISOString().split('T')[0];
+
+        const matchesName = name.includes(nameFilter);
+        const matchesMobile = mobileNumber.includes(nameFilter);
+        const matchesDate = dateFilter ? rowDate === dateFilter : true;
+
+        if ((matchesName || matchesMobile) && matchesDate) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+</script>
+
+<% include partials/footer %>

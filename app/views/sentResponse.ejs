@@ -1,44 +1,49 @@
 <% include partials/header %>
 
-    <div class="container text-center">
+<div class="container mx-auto text-center">
     <br>
-        <div class="col-md-6 col-md-offset-3">
-        
-        <%  let response = '';
-            let name = data.name;
-            let mobile = data.mobile;
-        %>
+    <div class="w-full max-w-2xl mx-auto pt-20">
+        <% let response = ''; let name = data.name; let mobile = data.mobile; %>
 
-        <%    if(data.err) { response = data.err; %>
-            <p class="alert alert-danger" style="font-size:2em;">
-                <b class="text-warning"><%= response %></b>                
-            </p>
+        <div class="bg-white shadow-md rounded-lg p-6 border border-gray-200">
+            <% if (data.err) { 
+                response = data.err; %>
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td class="py-4 text-red-600 text-lg font-bold text-center" colspan="2">
+                                <b><%= response %></b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <% } else { 
+                response = data.success.msg; %>
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td class="py-4 text-green-600 text-lg font-bold text-center" colspan="2">
+                                <b><%= response %></b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <% } %>
 
-        <%  }  else { response = data.success.msg; %>
-        
-            <p class="alert alert-success" style="font-size:2em;">
-                <b class="text-success"><%= response %></b>
-            </p>
-        <% } %>
+            <br>
+            <div class="flex justify-center space-x-4">
+                <a href="/sent" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-blue-500 transition duration-200">Go to Sent Messages</a>
 
-            <br><br>
-            <a href="/sent" class="btn btn-large btn-primary">Go to Sent Messages</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <% if (data.err) { %>
-                <a class="btn btn-large btn-warning" onclick="window.history.back()">Try Again? </a>
-            <% } else { %>
-                <a href="/contacts/details/<%= mobile %>" class="btn btn-large btn-success">View <%= name %></a>
-            <% } %>            
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="/" class="btn btn-large btn-danger">Go to Home</a>
+                <% if (data.err) { %>
+                    <a class="rounded-md bg-yellow-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-yellow-500 transition duration-200" onclick="window.history.back()">Try Again?</a>
+                <% } else { %>
+                    <a href="/contacts/details/<%= mobile %>" class="rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-green-500 transition duration-200">View <%= name %></a>
+                <% } %>
+
+                <a href="/" class="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-red-500 transition duration-200">Home</a>
+            </div>
         </div>
-        
     </div>
+</div>
 
 <% include partials/footer %>
