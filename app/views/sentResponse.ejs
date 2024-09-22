@@ -1,11 +1,11 @@
 <% include partials/header %>
 
-<div class="container mx-auto text-center">
+<div class="container mx-auto text-center px-4 sm:px-6 lg:px-8">
     <br>
-    <div class="w-full max-w-2xl mx-auto pt-20">
+    <div class="w-full max-w-2xl mx-auto pt-10 sm:pt-20">
         <% let response = ''; let name = data.name; let mobile = data.mobile; %>
 
-        <div class="bg-white shadow-md rounded-lg p-6 border border-gray-200">
+        <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 border border-gray-200">
             <% if (data.err) { 
                 response = data.err; %>
                 <table class="w-full">
@@ -31,7 +31,7 @@
             <% } %>
 
             <br>
-            <div class="flex justify-center space-x-4">
+            <div class="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-2 sm:space-y-0">
                 <a href="/sent" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-blue-500 transition duration-200">Go to Sent Messages</a>
 
                 <% if (data.err) { %>

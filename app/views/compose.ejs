@@ -60,6 +60,14 @@
 function handleSubmit(event) {
     event.preventDefault();
 
+    const messageInput = document.getElementById('message');
+    const messageLength = messageInput.value.length;
+
+    if (messageLength < 22 || messageLength > 100) {
+        alert('Message length should be between 22 and 100 characters.');
+        return false;
+    }
+
     const buttonText = document.getElementById('buttonText');
     const loadingSpinner = document.getElementById('loadingSpinner');
     const otpButton = document.getElementById('otpButton');
@@ -72,5 +80,4 @@ function handleSubmit(event) {
         event.target.submit();
     }, 2000);
 }
-
 </script>
