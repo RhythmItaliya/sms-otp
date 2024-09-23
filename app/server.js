@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// err
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
