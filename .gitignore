@@ -5,4 +5,4 @@ node_modules/
 .env
 
 # env
-.env.pr
+.env.production
