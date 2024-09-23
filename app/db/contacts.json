@@ -1,13 +1,6 @@
 {
     "contacts": [
         {
-            "firstName": "Test",
-            "lastName": "Number",
-            "mobile": "+919810153260",
-            "image": "/icons/b5.png",
-            "address": "303, H.R, Gurugram Delhi"
-        },
-        {
             "firstName": "Rutashu",
             "lastName": "Bhayani",
             "mobile": "+919723707522",
@@ -20,6 +13,13 @@
             "mobile": "+919265748502",
             "image": "/icons/b1.png",
             "address": "202, Blue Sky Apartments, Pune"
+        },
+        {
+            "firstName": "Test",
+            "lastName": "Number",
+            "mobile": "+919810153260",
+            "image": "/icons/b5.png",
+            "address": "303, H.R, Gurugram Delhi"
         },
         {
             "firstName": "Jay",
